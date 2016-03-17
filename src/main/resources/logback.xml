@@ -3,15 +3,15 @@
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
-            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n</Pattern>
         </layout>
     </appender>
 
-    <logger name="com.leonkay" level="TRACE"/>
+    <logger name="com.leonkay" level="error"/>
     <logger name="org.apache.http.wire" level="WARN" />
 
 
-    <root level="debug">
+    <root level="ERROR">
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>

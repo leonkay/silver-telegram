@@ -1,5 +1,11 @@
 package com.leonkay.fun;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
+import java.net.URL;
+
 /**
  * Created by leonkay on 3/14/16.
  */
@@ -12,12 +18,17 @@ public class EmailFinderConsole {
      */
     public static void main(String ... args) {
 
+        Logger logger = LoggerFactory.getLogger(EmailFinderConsole.class);
+
         if (args != null && args.length > 0) {
 
-            for (String url : args) {
-                EmailFinder finder = new EmailFinder();
-                finder.visit(url);
-            }
+            String cur = System.getProperty("user.dir");
+            URL re = EmailFinderConsole.class.getClassLoader().getResource("/logback.xml");
+            logger.debug("Test");
+//            for (String url : args) {
+//                WebCrawler finder = new WebCrawler();
+//                finder.visit(url);
+//            }
         }
         else {
             System.out.println("ERROR: Please provide a URL as an argument to this application");

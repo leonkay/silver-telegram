@@ -14,9 +14,9 @@ import java.util.regex.Pattern;
 /**
  * Created by leonkay on 3/14/16.
  */
-public class EmailFinder {
+public class WebCrawler {
 
-    private static final Log LOG = LogFactory.getLog(EmailFinder.class);
+    private static final Log LOG = LogFactory.getLog(WebCrawler.class);
 
     private static final Pattern supportedProtocols = Pattern.compile("^[hH][tT][tT][pP][sS]?://.*");
 
@@ -34,7 +34,7 @@ public class EmailFinder {
     /**
      * Constructor
      */
-    public EmailFinder() {}
+    public WebCrawler() {}
 
     /**
      * Visit a URL, searching for email addresses, and  navigates to deeper URLs referenced by the
