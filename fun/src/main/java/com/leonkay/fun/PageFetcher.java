@@ -15,6 +15,7 @@ import org.apache.http.impl.client.BasicResponseHandler;
 import org.w3c.dom.Document;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by leonkay on 3/15/16.
@@ -38,23 +39,25 @@ public class PageFetcher {
             @Override
             public void onNewState(CrawlerContext crawlerContext, StateVertex stateVertex) {
                 System.out.println("---------------------------------");
-                String content = crawlerContext.getCurrentState().getDom();
-                String strippedDom = crawlerContext.getCurrentState().getStrippedDom();
+
                 try {
-                    Document doc = crawlerContext.getCurrentState().getDocument();
-                    String str = doc.toString();
-                    System.out.println(str);
+                    System.out.println(stateVertex.getUrl());
+                    String content = crawlerContext.getCurrentState() != null ? crawlerContext.getCurrentState().getDom() : "";
+
+                    //System.out.println(content);
                 }
                 catch (Exception ex) {
                     ex.printStackTrace();
                 }
-                System.out.println(crawlerContext.getCurrentState().getDom());
                 System.out.println("---------------------------------");
 
             }
         });
         builder.crawlRules().click("span");
-
+        builder.crawlRules().click("div");
+        builder.crawlRules().waitAfterEvent(500, TimeUnit.MILLISECONDS);
+        builder.crawlRules().waitAfterReloadUrl(500, TimeUnit.MILLISECONDS);
+        builder.crawlRules().dontClick("a").withText("Twitter").withText("Facebook").withText("LinkedIn");
         builder.setBrowserConfig(new BrowserConfiguration(EmbeddedBrowser.BrowserType.PHANTOMJS, 1));
 
 
