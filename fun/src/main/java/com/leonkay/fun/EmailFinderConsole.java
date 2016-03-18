@@ -24,6 +24,10 @@ public class EmailFinderConsole {
 
 
         if (args != null && args.length > 0) {
+            // assume SLF4J is bound to logback in the current environment
+            LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+            // print logback's internal status
+            StatusPrinter.print(lc);
 
             String cur = System.getProperty("user.dir");
             URL re = EmailFinderConsole.class.getClassLoader().getResource("/logback.xml");
