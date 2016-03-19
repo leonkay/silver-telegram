@@ -11,7 +11,7 @@ Project Requirements:
 -----
     + maven: The build tool used for dependency management and building.
     + java 1.8: The project makes use of Lambda's which is a new feature of java 1.8
-    + Firefox should be preinstalled. The browser is required for
+    + Firefox should be preinstalled. The browser is required for executing the crawl
 
     README.md : Readme for this project
 
@@ -42,3 +42,7 @@ Executing the Project:
 After forking the project locally, run the following
 
     $ mvn clean install
+    $ cd target
+    $ java -cp funWithJava-1.0-SNAPSHOT-jar-with-dependencies.jar com.leonkay.fun.EmailFinderConsole <URL>
+
+Where <URL> is the url you want to crawl for content.

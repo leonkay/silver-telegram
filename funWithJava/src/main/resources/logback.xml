@@ -27,6 +27,10 @@
         <appender-ref ref="FILE" />
     </logger>
 
+    <logger name="com.leonkay.fun.EmailFinderConsole" level="debug" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
     <logger name="com.leonkay.fun.crawler" level="debug"
             additivity="false">
         <appender-ref ref="STDOUT" />
