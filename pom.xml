@@ -11,7 +11,7 @@
     <name>Multi Chapter Simple Parent Project</name>
 
     <modules>
-        <module>fun</module>
+        <module>funWithJava</module>
     </modules>
 
     <build>

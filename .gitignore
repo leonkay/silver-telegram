@@ -4,4 +4,5 @@
 target
 target/*
 .DS_Store
+crawlerResponse.txt
 
