@@ -45,4 +45,4 @@ After forking the project locally, run the following
     $ cd target
     $ java -cp funWithJava-1.0-SNAPSHOT-jar-with-dependencies.jar com.leonkay.fun.EmailFinderConsole <URL>
 
-Where <URL> is the url you want to crawl for content.
+Where \<URL> is the url you want to crawl for content.
