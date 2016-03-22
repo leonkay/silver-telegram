@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- definition of appender STDOUT -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>crawlerResponse.txt </file>
+        <append>true</append>
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="REPORT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.leonkay.fun" level="debug"
+            additivity="false">
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <logger name="com.leonkay.fun.EmailFinderConsole" level="debug" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="com.leonkay.fun.crawler" level="debug"
+            additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="com.leonkay.fun.web.content" level="error" additivity="false">
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <logger name="reporting" level="debug"
+            additivity="false">
+        <appender-ref ref="REPORT" />
+    </logger>
+
+    <root level="error">
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>

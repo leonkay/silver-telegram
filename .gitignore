@@ -1,0 +1,8 @@
+*.iml
+.idea
+.idea/*
+target
+target/*
+.DS_Store
+crawlerResponse.txt
+
